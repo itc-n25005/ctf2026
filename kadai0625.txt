@@ -1,0 +1,23 @@
+web
+1. sudo apt update
+2. sudo apt install apache2
+3. sudo systemctl start apache2
+4. sudo systemctl enable apache2
+5. sudo htpasswd -c /etc/apache2/.htpasswd username
+6. <Directory "/var/www/html">
+    AuthType Basic
+    AuthName "Restricted Area"
+    AuthUserFile /etc/apache2/.htpasswd
+    Require valid-user
+</Directory> > .htaccess
+7. sudo systemctl restart apache2
+
+ftp
+1. sudo apt install vsftpd
+2. sudo systemctl start vsftpd
+3. sudo systemctl enable vsftpd
+
+telnet
+1. sudo apt install telnet
+2. sudo systemctl start telnet
+3. sudo systemctl enable telnet 
